@@ -33,10 +33,9 @@ count(g20)/count(df)
 x2 <- mean(g20$math_scr)
 se2 <- sd(g20$math_scr)/ sqrt(length(g20$math_scr))
 
-# test difference in means
-a <- .1
+# test difference in means (2 sided test)
 t <- (x1-x2)/(sqrt((se1*se1) + (se2*se2)))
-1-pnorm(t)
+2*(1-pnorm(t))
 
 # covariance
 cov(df$avginc, df$math_scr)
